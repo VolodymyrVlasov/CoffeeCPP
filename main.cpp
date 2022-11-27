@@ -1,10 +1,12 @@
+// #pragma once
 #include <iostream>
-#include "./CoffeeMachine.h"
+#include "CoffeeMachine.h"
 
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello!" << std::endl;
+    cout << "Hello!" << endl;
     CoffeeMachine coffeeMachine;
     coffeeMachine.Run();
     return 0;

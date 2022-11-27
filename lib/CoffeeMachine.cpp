@@ -1,6 +1,7 @@
+// #pragma once
 #include "CoffeeMachine.h"
-#include "service.h"
-#include "work.h"
+#include "Service.h"
+#include "Work.h"
 
 void CoffeeMachine::Run()
 {

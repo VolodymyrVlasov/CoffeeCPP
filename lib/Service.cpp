@@ -1,5 +1,5 @@
-#pragma once
-#include "../Service.h"
+// #pragma once
+#include "Service.h"
 
 void Service::Run()
 {

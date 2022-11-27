@@ -1,5 +1,6 @@
+#pragma once
 #include <iostream>
-#include "./services/HumanInterface.h"
+#include "HumanInterface.h"
 
 using namespace std;
 
@@ -15,6 +16,6 @@ public:
     void MakeService();
     void Stop();
 
-    void SetState (int newState);
+    void SetState(int newState);
     int GetState();
 };

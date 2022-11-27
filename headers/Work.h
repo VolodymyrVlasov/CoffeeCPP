@@ -1,5 +1,6 @@
-#include <iostream>
-#include "./HumanInterface.h"
+
+#pragma once
+#include "HumanInterface.h"
 
 class Work : public HumanInterface
 {

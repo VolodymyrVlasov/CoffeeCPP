@@ -1,7 +1,8 @@
-#include <iostream>
-#include "./HumanInterface.h"
 
-class Service : HumanInterface
+#pragma once
+#include "HumanInterface.h"
+
+class Service : public HumanInterface
 {
 public:
     void Run();
