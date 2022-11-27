@@ -1,10 +1,10 @@
-#include "CoffeeMachine.h"
+#include <iostream>
+#include "./CoffeeMachine.h"
 
-using namespace std;
 
 int main()
 {
-    cout << "Hello!" << endl;
+    std::cout << "Hello!" << std::endl;
     CoffeeMachine coffeeMachine;
     coffeeMachine.Run();
     return 0;

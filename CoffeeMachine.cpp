@@ -1,6 +1,6 @@
 #include "CoffeeMachine.h"
-#include "./services/service.h"
-#include "./services/work.h"
+#include "service.h"
+#include "work.h"
 
 void CoffeeMachine::Run()
 {
