@@ -1,4 +1,4 @@
-#include "../HumanInterface.h"
+#include "../headers/HumanInterface.h"
 
 int HumanInterface::ReadInput()
 {

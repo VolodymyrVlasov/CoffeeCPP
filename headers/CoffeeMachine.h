@@ -15,7 +15,6 @@ public:
     void MakeWork();
     void MakeService();
     void Stop();
-
     void SetState(int newState);
     int GetState();
 };

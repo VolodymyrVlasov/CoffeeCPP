@@ -1,11 +1,11 @@
 // #pragma once
-#include "CoffeeMachine.h"
-#include "Service.h"
-#include "Work.h"
+#include "../headers/CoffeeMachine.h"
+#include "../headers/Service.h"
+#include "../headers/Work.h"
 
 void CoffeeMachine::Run()
 {
-    this->WriteMessage("Select work type:\n\t1 - Service\n\t2 - Work\n\t3 - Turn off >");
+    this->WriteMessage("Select work type:\n\t1 - Service\n\t2 - Work\n\t0 - Turn off\n>");
     int value = this->ReadInput();
 
     switch (value)
@@ -16,7 +16,7 @@ void CoffeeMachine::Run()
     case 2:
         this->MakeWork();
         break;
-    case 3:
+    case 0:
         this->Stop();
         break;
     default:
