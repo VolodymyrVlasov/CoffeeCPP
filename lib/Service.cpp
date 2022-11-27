@@ -16,16 +16,16 @@ void Service::Run()
     this->PrintReport();
     break;
   case 2:
-    this->WriteMessage("You select: add coffee");
+    this->AddMaterial(2);
     break;
   case 3:
-    this->WriteMessage("You select: add tea");
+    this->AddMaterial(3);
     break;
   case 4:
-    this->WriteMessage("You select: add water");
+    this->AddMaterial(4);
     break;
   case 5:
-    this->WriteMessage("You select: add sugar");
+    this->AddMaterial(5);
     break;
   case 6:
     this->WriteMessage("You select: get cash");
@@ -40,25 +40,34 @@ void Service::AddMaterial(int type)
 {
   DB *db = DB::GetInstance();
   this->WriteMessage("Enter amount to add:\n");
-  int value = this->ReadInput();
+  int value;
   int result;
 
   switch (type)
   {
-  case 0:
+  case 2:
+    value = this->ReadInput();
     db->SetCoffeeAmount(value);
     result = db->GetCoffeeAmount();
     break;
-  case 1:
-    break;
-  case 2:
-    break;
   case 3:
+    value = this->ReadInput();
+    db->SetTeaAmount(value);
+    result = db->GetTeaAmount();
     break;
   case 4:
+    value = this->ReadInput();
+    db->SetWaterAmount(value);
+    result = db->GetWaterAmount();
     break;
   case 5:
+    value = this->ReadInput();
+    db->SetSugarAmount(value);
+    result = db->GetSugarAmount();
     break;
+  default:
+    this->WriteMessage("Invalid choice");
+    this->Run();
   }
 
   stringstream message;
@@ -67,8 +76,22 @@ void Service::AddMaterial(int type)
   this->Run();
 }
 
-void Service::GetCash()
+void Service::CollectCash(int amount)
 {
+  DB *db = DB::GetInstance();
+  int remainingCash;
+  if (db->GetCashAmount() - amount >= 0)
+  {
+    remainingCash = db->GetCashAmount() - amount;
+    db->SetCashAmount(remainingCash);
+    stringstream report;
+    report << "You take: " << amount << " Remaining: " << db->GetCashAmount() << endl;
+    this->WriteMessage(report.str());
+  }
+  else
+  {
+    this->WriteMessage("Error! Enter smaller value");
+  }
 }
 
 void Service::PrintReport()
