@@ -7,7 +7,7 @@ class Service : public HumanInterface
 public:
     void Run();
     void AddMaterial(int type);
-    void CollectCash(int amount);
+    void CollectCash();
     void PrintReport();
     void Stop();
 };

@@ -8,4 +8,5 @@ class HumanInterface
 public:
     int ReadInput();
     void WriteMessage(string message);
+    bool ConfirmDrink(string &drink);
 };

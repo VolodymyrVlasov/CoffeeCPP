@@ -7,7 +7,10 @@ class Work : public HumanInterface
 public:
     void Run();
     void MakeTea();
-    void MakeCoffee();
-    void AddSugar();
+    void MakeEspresso();
+    void MakeCapuchio();
+    void MakeMachiatto();
+    void MakeHotMilk();
+    int AddSugar();
     void Stop();
 };

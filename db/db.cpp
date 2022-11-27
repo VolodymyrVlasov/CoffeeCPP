@@ -54,6 +54,16 @@ int DB::GetSugarAmount()
     return this->sugarAmount;
 }
 
+int DB::SetMilkAmount(int amount)
+{
+    return this->milkAmount = amount;
+}
+
+int DB::GetMilkAmount()
+{
+    return this->milkAmount;
+}
+
 int DB::SetCashAmount(int amount)
 {
     return this->cashAmount = amount;

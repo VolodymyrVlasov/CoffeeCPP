@@ -9,6 +9,7 @@ private:
         coffeeAmount = 80,
         waterAmount = 1000,
         sugarAmount = 100,
+        milkAmount = 100,
         cashAmount = 0;
 
 public:
@@ -21,8 +22,9 @@ public:
     int GetWaterAmount();
     int SetSugarAmount(int amount);
     int GetSugarAmount();
+    int SetMilkAmount(int amount);
+    int GetMilkAmount();
     int SetCashAmount(int amount);
     int GetCashAmount();
     std::string ToString();
 };
-

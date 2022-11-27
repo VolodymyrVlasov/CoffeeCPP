@@ -11,3 +11,8 @@ void HumanInterface::WriteMessage(string message)
 {
     cout << message << endl;
 }
+
+bool HumanInterface::ConfirmDrink (string &drink)
+{
+    this->WriteMessage("Your drink is");
+}
