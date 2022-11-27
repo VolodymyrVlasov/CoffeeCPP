@@ -1,4 +1,5 @@
 #include "../headers/db.h"
+#include <sstream>
 
 DB *DB::instance = 0;
 
@@ -61,4 +62,15 @@ int DB::SetCashAmount(int amount)
 int DB::GetCashAmount()
 {
     return this->cashAmount;
+}
+
+std::string DB::ToString()
+{
+    std::stringstream toString;
+    toString << "cashAmount:\t" << this->cashAmount << std::endl;
+    toString << "sugarAmount:\t" << this->sugarAmount << std::endl;
+    toString << "coffeeAmount:\t" << this->coffeeAmount << std::endl;
+    toString << "teaAmount:\t" << this->teaAmount << std::endl;
+    toString << "waterAmount:\t" << this->waterAmount << std::endl;
+    return toString.str();
 }

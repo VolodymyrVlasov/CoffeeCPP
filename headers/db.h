@@ -1,12 +1,14 @@
+#include <string>
+
 class DB
 {
 private:
     static DB *instance;
     DB();
-    int teaAmount = 0,
-        coffeeAmount = 0,
-        waterAmount = 0,
-        sugarAmount = 0,
+    int teaAmount = 20,
+        coffeeAmount = 80,
+        waterAmount = 1000,
+        sugarAmount = 100,
         cashAmount = 0;
 
 public:
@@ -21,5 +23,6 @@ public:
     int GetSugarAmount();
     int SetCashAmount(int amount);
     int GetCashAmount();
+    std::string ToString();
 };
 

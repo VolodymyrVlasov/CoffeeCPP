@@ -29,15 +29,17 @@ void CoffeeMachine::MakeService()
 {
     Service service;
     service.Run();
+    this->Run();
 }
 
 void CoffeeMachine::MakeWork()
 {
     Work work;
     work.Run();
+    this->Run();
 }
 
 void CoffeeMachine::Stop()
 {
-   this->WriteMessage("Bye bye");
+    this->WriteMessage("Bye bye");
 }

@@ -1,4 +1,3 @@
-// #pragma once
 #include "../headers/Service.h"
 #include "../headers/db.h"
 #include <sstream>
@@ -37,20 +36,52 @@ void Service::Run()
   }
 }
 
+void Service::AddMaterial(int type)
+{
+  DB *db = DB::GetInstance();
+  this->WriteMessage("Enter amount to add:\n");
+  int value = this->ReadInput();
+  int result;
+
+  switch (type)
+  {
+  case 0:
+    db->SetCoffeeAmount(value);
+    result = db->GetCoffeeAmount();
+    break;
+  case 1:
+    break;
+  case 2:
+    break;
+  case 3:
+    break;
+  case 4:
+    break;
+  case 5:
+    break;
+  }
+
+  stringstream message;
+  message << "You add: " << value << ", now at machine are " << result << endl;
+  this->WriteMessage(message.str());
+  this->Run();
+}
+
+void Service::GetCash()
+{
+}
+
 void Service::PrintReport()
 {
   DB *db = DB::GetInstance();
-
-  std::cout << &db << endl;
   stringstream report;
-
-  report << "REPORT:\n";
-  // report << "Cash: " << db.GetCashAmount();
-
+  report << "\nREPORT:" << endl;
+  report << db->ToString() << endl;
   this->WriteMessage(report.str());
   this->Run();
 }
 
 void Service::Stop()
 {
+  this->WriteMessage("Buy...\nRedirecting to main menu\n");
 }
