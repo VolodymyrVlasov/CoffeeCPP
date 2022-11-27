@@ -1,5 +1,9 @@
-class Work
+#include <iostream>
+#include "./HumanInterface.h"
+
+class Work : public HumanInterface
 {
+public:
     void Run();
     void MakeTea();
     void MakeCoffee();

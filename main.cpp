@@ -1,12 +1,11 @@
-#include "include.h"
+#include "CoffeeMachine.h"
 
 using namespace std;
 
 int main()
 {
-    int x;
-    cout << "Enter number" << endl;
-    cin >> x;
-    cout << "Your number is " << x << endl;
+    cout << "Hello!" << endl;
+    CoffeeMachine coffeeMachine;
+    coffeeMachine.Run();
     return 0;
 }

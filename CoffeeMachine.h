@@ -1,15 +1,20 @@
 #include <iostream>
+#include "./services/HumanInterface.h"
 
 using namespace std;
 
-class CoffeeMachine
+class CoffeeMachine : public HumanInterface
 {
-private:
-    /* data */
-public:
-   void Run();
-   void Work();
-   void Service();
-   void Stop();
-};
 
+private:
+    int state;
+
+public:
+    void Run();
+    void MakeWork();
+    void MakeService();
+    void Stop();
+
+    void SetState (int newState);
+    int GetState();
+};

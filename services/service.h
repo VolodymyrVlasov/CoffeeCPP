@@ -1,9 +1,9 @@
-class Service
+#include <iostream>
+#include "./HumanInterface.h"
+
+class Service : HumanInterface
 {
-private:
-    /* data */
 public:
-    Service(/* args */);
     void Run();
     void AddCoffee(int amount);
     void AddTea(int amount);
@@ -12,6 +12,5 @@ public:
     void GetCash(int amount);
     void PrintReport();
     void Stop();
-    ~Service();
 };
 

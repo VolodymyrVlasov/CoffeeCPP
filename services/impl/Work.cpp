@@ -1,16 +1,4 @@
-#include <iostream>
+#pragma once
+#include "../Work.h"
 
 using namespace std;
-
-class Work
-{
-public:
-    void run()
-    {
-    }
-
-    void close ()
-    {
-        
-    }
-};

@@ -1,36 +1,42 @@
 #include "CoffeeMachine.h"
+#include "./services/service.h"
+#include "./services/work.h"
 
-class CoffeeMachine
+void CoffeeMachine::Run()
 {
-private:
-    int currentSelection;
+    this->WriteMessage("Select work type:\n\t1 - Service\n\t2 - Work\n\t3 - Turn off >");
+    int value = this->ReadInput();
 
-public:
-    void run()
+    switch (value)
     {
-        int input;
-        cout << "Hello!\nSelect work type: 1 - Service, 2 - Work, 3 - Turn off >" << endl;
-        cin >> input;
-
-        switch (input)
-        {
-        case 1:
-           // create instance of Service
-           // 
-            
-            break;
-        case 2:
-
-            break;
-        case 3:
-
-            break;
-        }
+    case 1:
+        this->MakeService();
+        break;
+    case 2:
+        this->MakeWork();
+        break;
+    case 3:
+        this->Stop();
+        break;
+    default:
+        cout << "Please, make correct choice!" << endl;
+        this->Run();
     }
+}
 
+void CoffeeMachine::MakeService()
+{
+    Service service;
+    service.Run();
+}
 
+void CoffeeMachine::MakeWork()
+{
+    Work work;
+    work.Run();
+}
 
-    ~CoffeeMachine()
-    {
-    }
-};
+void CoffeeMachine::Stop()
+{
+   this->WriteMessage("Bye bye");
+}
